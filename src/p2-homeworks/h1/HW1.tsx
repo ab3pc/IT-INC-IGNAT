@@ -72,7 +72,7 @@ function HW1() {
           />
         ))}
       </div>
-      <div style={{ backgroundColor: "#ccc", padding: "10px" }}>
+      <div style={{ backgroundColor: "#052105", padding: "10px" }}>
         <input
           value={inputValue}
           onChange={(e) => setInput(e.target.value)}
@@ -80,7 +80,7 @@ function HW1() {
           placeholder="Enter your message"
           className={styles.input}
         />
-        <button
+        <button className={styles.btn}
           onClick={handleSend}
           style={{
             padding: "10px",
