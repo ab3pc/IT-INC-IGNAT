@@ -1,3 +1,58 @@
-.someClass {
+.container {
+	margin-top: 15px;
+	margin: 0 auto;
+	max-width: 500px;
+	min-height: 50vh;
+}
+.item {
+	
+	margin-bottom: 10px;
+	display: flex;
+	justify-content: space-between;
+
+	transition: transform 0.1s linear;
+}
+.item:hover {
+	transform: scale(0.99);
+	background-color: #ccc;
+		
+}
+.name {
+	width: 40%;
+
+}
+.priority {
+	width: 30%;
+}
+
+.low {
+	color: green;
+}
+.middle {
+	color: orange;
+}
+.high {
+	color: red;
+}
+.btn {
+	cursor: pointer;
+}
+
+.btn__filters {
+	outline: none;
+	border: none;
+	box-shadow: 1px 2px 4px 0px #000;
+	border-radius: 5px;
+	background-color: rgb(92, 87, 87);
+	color: #fff;
+	margin-right: 5px;
+	padding: 5px 10px;
+	cursor: pointer;
+
+	transition:transform 0.1s linear;
+
+}
+.btn__filters:hover {
+	transform: scale(1.1);
 
 }

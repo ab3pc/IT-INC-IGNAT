@@ -31,3 +31,8 @@
     box-shadow:  41px 41px 81px #bebebe,
                  -41px -41px 81px #ffffff;
 }
+.low{
+	color: orange;
+
+    background-color: red;
+}
