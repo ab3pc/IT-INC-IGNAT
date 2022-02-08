@@ -69,8 +69,8 @@
 
 }
 .blockMsg {
-		display: flex;
-	justify-content: space-between;
+	display: flex;
+	justify-content: space-evenly;
 	align-items: flex-end;
 	text-align: left;
 	max-width: 600px;
