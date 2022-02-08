@@ -15,7 +15,7 @@ function Message({ avatar, name, message, time }: PropsMsgType) {
 
       <div className={styles.message}>
         <div className={styles.blockMsg}>
-          <div>
+          <div className={styles.blockMsgInner}>
             <span className={styles.name}>{name}</span>
             <span className={styles.text}>{message}</span>
           </div>

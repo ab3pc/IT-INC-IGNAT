@@ -2,7 +2,7 @@
 	margin: 10px 50px;
 	display: flex;
 	align-items: flex-end;
-	width: 100%;
+	max-width: 80%;
 }
 .message {
 	display: inline-block;
@@ -60,22 +60,28 @@
 }
 .text {
 	color: #fff;
-	
+	word-wrap: break-word
 }
 .time {
+	display: inline-block;
 	padding-left: 10px;
 	color: #3d663d;
 
 }
 .blockMsg {
-	display: flex;
+		display: flex;
 	justify-content: space-between;
 	align-items: flex-end;
 	text-align: left;
-	
+	max-width: 600px;
 	padding: 10px;
+}
+.blockMsgInner {
+	max-width: 75%;
+	
 }
 .blockMsg span {
 	margin-bottom: 5px;
+
 }
 

@@ -7,12 +7,11 @@
         
         display: flex;
         flex-direction: column;
-     ;
         height: auto;
         max-height: 40vh;
         overflow: hidden;
         overflow-y: auto;
-       
+   
 }
 .altmsg {
     margin-bottom: 10px;
@@ -30,9 +29,4 @@
     background: linear-gradient(145deg, #cacaca, #f0f0f0);
     box-shadow:  41px 41px 81px #bebebe,
                  -41px -41px 81px #ffffff;
-}
-.low{
-	color: orange;
-
-    background-color: red;
 }
