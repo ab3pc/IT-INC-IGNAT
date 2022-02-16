@@ -23,19 +23,13 @@ export const defaultAffairs: AffairType = [
 ];
 
 // pure helper functions
-export const filterAffairs = (
-  affairs: AffairType,
-  filter: FilterType
-): AffairType => {
+export const filterAffairs = (affairs: AffairType,filter: FilterType): AffairType => {
   if (filter === "all") return affairs;
- else if (filter) {
-    return affairs.filter((w) => w.priority === filter);
-  } else return affairs;
+  else return affairs.filter((w) => w.priority === filter);
 };
 
 export const deleteAffair = (affairs: AffairType, _id: number): AffairType => {
-  
-  return affairs.filter(w => w._id !== _id);
+  return affairs.filter((w) => w._id !== _id);
 };
 
 function HW2() {
@@ -43,12 +37,12 @@ function HW2() {
   const [filter, setFilter] = useState<FilterType>("all");
 
   const filteredAffairs = filterAffairs(affairs, filter);
-  
+
   const deleteAffairCallback = (_id: number) =>
-    setAffairs(deleteAffair(affairs, _id)); 
+    setAffairs(deleteAffair(affairs, _id));
 
   return (
-    <div>
+    <div style={{minHeight:'300px'}}>
       <hr />
       <h3>Homeworks 2</h3>
       {/*should work (должно работать)*/}
@@ -56,11 +50,10 @@ function HW2() {
         data={filteredAffairs}
         setFilter={setFilter}
         deleteAffairCallback={deleteAffairCallback}
+        filters={filter}
       />
-      <hr />
-      {/*для личного творчества, могу проверить*/}
-      {/*<AlternativeAffairs/>*/}
-      <hr />
+  
+    
     </div>
   );
 }

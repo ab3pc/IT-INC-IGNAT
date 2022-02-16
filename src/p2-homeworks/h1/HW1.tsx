@@ -53,7 +53,7 @@ function HW1() {
     <div>
       <hr />
       homeworks 1
-      <Message
+        <Message
         avatar={messageData.avatar}
         name={messageData.name}
         message={messageData.message}
@@ -62,6 +62,7 @@ function HW1() {
       <hr />
       {/*========================CHAT SECTION===========================*/}
       <div className={styles.chat}>
+        <h4>Chat</h4>
         {msg.map((msg, index) => (
           <AlternativeMessage
             key={index}
@@ -95,7 +96,7 @@ function HW1() {
         </button>
       </div>
       {/*========================CHAT SECTION===========================*/}
-      <hr />
+  
     </div>
   );
 }

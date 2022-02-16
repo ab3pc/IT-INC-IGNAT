@@ -13,6 +13,7 @@
         overflow-y: auto;
    
 }
+
 .altmsg {
     margin-bottom: 10px;
 }
@@ -29,4 +30,10 @@
     background: linear-gradient(145deg, #cacaca, #f0f0f0);
     box-shadow:  41px 41px 81px #bebebe,
                  -41px -41px 81px #ffffff;
+}
+hr {
+    margin-top: 20px;
+    display: block;
+    height: 5px;
+    background-color: #ccc;
 }

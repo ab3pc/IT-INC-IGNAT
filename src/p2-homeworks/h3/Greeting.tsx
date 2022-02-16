@@ -1,28 +1,44 @@
-import React from 'react'
-import s from './Greeting.module.css'
+import React from "react";
+import s from "./Greeting.module.css";
+import { UserType } from "./HW3";
 
 type GreetingPropsType = {
-    name: any // need to fix any
-    setNameCallback: any // need to fix any
-    addUser: any // need to fix any
-    error: any // need to fix any
-    totalUsers: any // need to fix any
-}
+  name: string;
+  setNameCallback: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  addUser: () => void;
+  error: string;
+  totalUsers: number;
+  users: UserType[];
+  onKeyPress: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+};
 
 // презентационная компонента (для верстальщика)
 const Greeting: React.FC<GreetingPropsType> = (
-    {name, setNameCallback, addUser, error, totalUsers} // деструктуризация пропсов
+  { name, setNameCallback, addUser, error, totalUsers, users, onKeyPress } // деструктуризация пропсов
 ) => {
-    const inputClass = s.error // need to fix with (?:)
+  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setNameCallback(e);
+  };
+  const keyPressHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    onKeyPress(e);
+  };
+  const inputClass = s.input + ' ' + (error ? `${s.error}` : "");
 
-    return (
-        <div>
-            <input value={name} onChange={setNameCallback} className={inputClass}/>
-            <span>{error}</span>
-            <button onClick={addUser}>add</button>
-            <span>{totalUsers}</span>
-        </div>
-    )
-}
+  return (
+    <div>
+      <input
+        value={name}
+        onKeyPress={keyPressHandler}
+        onChange={onChangeHandler}
+        className={inputClass}
+        placeholder="Enter your name, samurai"
+      />
+      <button className={s.btn} onClick={addUser}>add</button>
+      <span className={s.count}>{totalUsers}</span>
+      <div className={s.someClass}>{error}</div>
+      {users.map((u, index) => (<span className={s.names} key={u._id}>{index + 1}:{u.name}</span>))}
+    </div>
+  );
+};
 
-export default Greeting
+export default Greeting;

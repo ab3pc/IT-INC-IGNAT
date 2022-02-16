@@ -6,6 +6,7 @@ type AffairsPropsType = { // need to fix any
     data: AffairType
     setFilter: (filter:FilterType) => void
     deleteAffairCallback: (_id: number)=> void
+    filters: FilterType
 }
 
 function Affairs(props: AffairsPropsType) {
@@ -30,15 +31,23 @@ function Affairs(props: AffairsPropsType) {
         props.setFilter('low')
     }
 
+
+    const stylesForButtons = {
+        low: styles.btn__filters + ' ' + (props.filters === 'low' ? styles.active:'') ,
+        high: styles.btn__filters + ' ' + (props.filters === 'high' ? styles.active:''),
+        middle: styles.btn__filters + ' ' + (props.filters === 'middle' ? styles.active:''),
+        all: styles.btn__filters + ' '+(props.filters === 'all' ? styles.active:'') ,
+    }
+
     return (
         <div className={styles.container}>
 
             {mappedAffairs}
 
-            <button className={styles.btn__filters} onClick={setAll}>All</button>
-            <button className={styles.btn__filters} onClick={setHigh}>High</button>
-            <button className={styles.btn__filters} onClick={setMiddle}>Middle</button>
-            <button className={styles.btn__filters} onClick={setLow}>Low</button>
+            <button className={stylesForButtons.all} onClick={setAll}>All</button>
+            <button className={stylesForButtons.high} onClick={setHigh}>High</button>
+            <button className={stylesForButtons.middle} onClick={setMiddle}>Middle</button>
+            <button className={stylesForButtons.low} onClick={setLow}>Low</button>
         </div>
     )
 }
