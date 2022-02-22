@@ -1,7 +1,51 @@
+.inner {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 .checkbox {
+	display: none;
+}
+input:checked + .circle svg{
+	opacity: 1;
+}
+input:checked + .circle svg path {
+	stroke: rgb(32, 156, 10);
+}
+
+.label {
+	display: flex;
+	
+}
+.circle {
+	display: block;
+	margin-right: 5px;
+	padding: 2px;
+	width: 15px;
+	height:15px;
+	border: 2px solid #ccc;
+	cursor: pointer;
+	border-radius: 50%;
 
 }
 
-.spanClassName {
+.label svg {
+	display: inline-block;
+	opacity: 0;
+	width: 100%;
+	height: 100%;
+	margin-bottom: 2px;
+	transition: all 0.2s linear;
 
+}
+
+.label:hover svg {
+	opacity: 0.8;
+	
+}
+.spanClassName {
+		display: inline-block;
+	
+	
 }

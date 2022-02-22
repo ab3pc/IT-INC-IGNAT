@@ -22,23 +22,40 @@ const Greeting: React.FC<GreetingPropsType> = (
   const keyPressHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
     onKeyPress(e);
   };
-  const inputClass = s.input + ' ' + (error ? `${s.error}` : "");
+  const inputClass = s.input + " " + (error ? `${s.error}` : "");
 
   return (
-    <div>
-      <input
-        value={name}
-        onKeyPress={keyPressHandler}
-        onChange={onChangeHandler}
-        className={inputClass}
-        placeholder="Enter your name, samurai"
-      />
-      <button className={s.btn} onClick={addUser}>add</button>
-      <span className={s.count}>{totalUsers}</span>
-      <div className={s.someClass}>{error}</div>
-      {users.map((u, index) => (<span className={s.names} key={u._id}>{index + 1}:{u.name}</span>))}
+    <>
+    
+    <div className={s.input__inner}>
+      <div>
+        <input
+          value={name}
+          onKeyPress={keyPressHandler}
+          onChange={onChangeHandler}
+          onBlur={onChangeHandler}
+          className={inputClass}
+          placeholder="Enter your name, samurai"
+        />
+        <div className={s.someClass}>{error}</div>
+      </div>
+      <div>
+        <button className={s.btn} onClick={addUser}>
+          add
+        </button>
+        <span className={s.count}>{totalUsers}</span>
+      </div>
+
+    
     </div>
+      {users.map((u, index) => (
+        <span className={s.names} key={u._id}>
+          {index + 1}:{u.name}
+        </span>
+      ))}
+      </>
   );
+  
 };
 
 export default Greeting;

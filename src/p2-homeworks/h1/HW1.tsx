@@ -34,7 +34,8 @@ const allMSG: Array<PropsMsgType> = [
 
 function HW1() {
   const [msg, setMsg] = React.useState<PropsMsgType[]>(allMSG);
-  const [inputValue, setInput] = React.useState("");
+  const [inputValue, setInput] = React.useState<string>("");
+  const [errorInput, setErrorInput] = React.useState<string>("");
 
   const handleSend = () => {
     if (inputValue) {
@@ -46,6 +47,10 @@ function HW1() {
       };
       setMsg([...msg, newMSG]);
       setInput("");
+      setErrorInput("")
+    }
+    else {
+      setErrorInput('Please, enter some message, samurai')
     }
   };
 
@@ -70,6 +75,7 @@ function HW1() {
             name={msg.name}
             message={msg.message}
             time={msg.time}
+           
           />
         ))}
       </div>
@@ -78,8 +84,8 @@ function HW1() {
           value={inputValue}
           onChange={(e) => setInput(e.target.value)}
           type="text"
-          placeholder="Enter your message"
-          className={styles.input}
+          placeholder={`${errorInput ? errorInput: "Enter your message"}`}
+          className={`${styles.input} ${errorInput&&styles.input__error}` }
         />
         <button className={styles.btn}
           onClick={handleSend}

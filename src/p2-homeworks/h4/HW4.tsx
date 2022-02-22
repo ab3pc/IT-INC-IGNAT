@@ -13,15 +13,17 @@ function HW4() {
             alert('введите текст...')
         } else {
             alert(text) // если нет ошибки показать текст
+            setText('')
         }
     }
 
-    const [checked, setChecked] = useState<boolean>(false)
+    const [checked, setChecked] = useState<boolean>(false);
+
     const testOnChange = (e: ChangeEvent<HTMLInputElement>) => setChecked(e.currentTarget.checked)
 
     return (
         <div>
-            <hr/>
+          
             homeworks 4
 
             <div className={s.column}>
@@ -29,7 +31,7 @@ function HW4() {
                     value={text}
                     onChangeText={setText}
                     onEnter={showAlert}
-                    error={error}
+                  error={error}
                     // spanClassName={s.testSpanError}
                 />
 
@@ -60,14 +62,14 @@ function HW4() {
                     checked={checked}
                     onChangeChecked={setChecked}
                 >
-                    some text {/*// этот текст попадёт в children*/}
+                    Some text  {/*// этот текст попадёт в children*/}
                 </SuperCheckbox>
 
                 {/*// onChange тоже должен работать*/}
                 <SuperCheckbox checked={checked} onChange={testOnChange}/>
             </div>
 
-            <hr/>
+       
             {/*для личного творчества, могу проверить*/}
             {/*<AlternativeSuperInputText/>*/}
             {/*<AlternativeSuperButton/>*/}

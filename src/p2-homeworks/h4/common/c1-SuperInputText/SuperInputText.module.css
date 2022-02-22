@@ -1,10 +1,36 @@
-.superInput {
+.inner {
+    height: 60px;
+}
 
+.superInput {
+    padding: 5px 10px ;
+    font-size: 20px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #ccc;
+
+    transition: all 0.2s linear;
+}
+
+.superInput:focus {
+    border: 1px solid rgb(0, 0, 0);
+ 
+    
+}
+
+.inner span {
+    display: block;
 }
 
 .errorInput {
-    border: 3px solid lime;
-    background: red;
+    padding: 5px 10px ;
+    font-size: 20px;
+    border: 1px solid red;
+    outline: none;
+    border-radius: 5px;
+
+    transition: all 0.2s linear;
+
 }
 
 .error {

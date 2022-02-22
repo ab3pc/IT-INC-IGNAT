@@ -19,16 +19,20 @@ function HW3() {
 
     return (
         <div className={s.container}>
+            <div className={s.inner}>
             <hr/>
            <h3>Homeworks 3</h3> 
 
             {/*should work (должно работать)*/}
             <GreetingContainer users={users} addUserCallback={addUserCallback}/>
 
-            <hr/>
+         
             {/*для личного творчества, могу проверить*/}
             {/*<AlternativeGreeting/>*/}
-          
+
+            </div>
+           
+            <hr/>
         </div>
     )
 }
